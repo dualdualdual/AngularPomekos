@@ -1,0 +1,2 @@
+# AngularPomekos
+ejericio de angular
