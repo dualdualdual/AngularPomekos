@@ -30,4 +30,3 @@ El Objetivo final de este ejercicio es conseguir una aplicacion que de primera i
 <p>poke api : https://pokeapi.co/api/v2/</p>
 <p>login mockapi: https://62d5b53c15ad24cbf2cc372d.mockapi.io/api/v1/users</p>
 <p>angular docs: https://angular.io/guide/developer-guide-overview</p>
-
