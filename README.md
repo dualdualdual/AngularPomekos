@@ -2,10 +2,10 @@
 Este sera un ejercicio con la finalidad de practicar y mejorar el uso de angular dentro de lo basico.
 
 <hr>
-<h5>Objetivo</h5>
+<h4>Objetivo</h4>
 El Objetivo final de este ejercicio es conseguir una aplicacion que de primera instancia se despliegue una pagina con un menu principal en el cual va a salir el sprite de un pokemon con id aleatorio cada vez que se recargue la pagina , un sistema de login a traves de una mockapi , un listado y paginacion de pokemon y una pagina que permita ver mas a detalle los datos de cada pokemon.
 
-<h5>Requisitos</h5>
+<h4>Requisitos</h4>
 <ol>
   <li>el proyecto se realizara con angular 13</li>
   <li>el formulario de login se realizara con formularios reactivos</li>
@@ -18,8 +18,14 @@ El Objetivo final de este ejercicio es conseguir una aplicacion que de primera i
   <li>las rutas posteriores al login, deberan cargarse conforme se realize el login y no antes (lazy Loading)</li>
 </ol>
 
+<h4>Opcionales</h4>
+<ul>
+  <li>usar tailwind para hacer las paginas responsive</li>
+  <li>se realizara una pagina en la que se podra ver un equipo y añadir botones en las paginas necesarias para crear esos equipos</li>
+  <li>se realizara una pagina en la que se realizaran equipos random segun los parametros del usuarios (type , color , form , region)</li>
+</ul>
 <hr>
-<h5>Recursos</h5>
+<h4>Recursos</h4>
 
 <p>poke api : https://pokeapi.co/api/v2/</p>
 <p>login mockapi: https://62d5b53c15ad24cbf2cc372d.mockapi.io/api/v1/users</p>
