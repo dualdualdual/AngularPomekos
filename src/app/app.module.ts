@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from "./shared/shared.module";
 import { HomePageComponent } from './views/home-page/home-page.component';
 import {HttpClientModule} from "@angular/common/http";
+import {ProgressSpinnerModule} from "primeng/progressspinner";
 
 
 @NgModule({
@@ -13,12 +14,13 @@ import {HttpClientModule} from "@angular/common/http";
     AppComponent,
     HomePageComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SharedModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        SharedModule,
+        HttpClientModule,
+        ProgressSpinnerModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PokemonService} from "../../services/pokemon.service";
+import {Pokemon, Result} from "../../interfaces";
 
 @Component({
   selector: 'app-home-page',
@@ -9,18 +10,23 @@ import {PokemonService} from "../../services/pokemon.service";
 export class HomePageComponent implements OnInit {
 
   pokemonSprite : string | undefined ="";
-
-  constructor(private pokemonservice : PokemonService) { }
-
-  ngOnInit(): void {
+  pokemon ?: string
+  isLoading : boolean
+  constructor(private pokemonservice : PokemonService) {
+    this.isLoading = true;
     this.pokemonservice.getCountPokemon().subscribe(data=>{
       this.pokemonservice.getPokemon(data.count).subscribe(data=>{
         this.pokemonservice.getPokemonSprite(data.results?.shift()?.url).subscribe(data=>{
-          console.log(data.sprites.frontDefault)
-          this.pokemonSprite = data.sprites.frontDefault;
+          this.pokemonSprite = data.sprites.front_default;
+          this.pokemon = data.name
+          this.isLoading = false
         })
       })
     });
+  }
+
+  ngOnInit(): void {
+
   }
 
 
