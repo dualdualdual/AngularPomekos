@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonService } from '../services/pokemon.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  pokemon!: Pokemon;
+  pokeId!: string;
 
-  ngOnInit() {
+  generateRandomId(){
+
+    return Math.floor(Math.random() * 248)+1;
+
+  }
+
+  constructor(private readonly pokeServ: PokemonService) { }
+
+  ngOnInit(): void {
+    
+    this.pokeId=(this.generateRandomId()).toString();
+
+    this.pokeServ.getPoke(this.pokeId).subscribe(poke => {this.pokemon = poke})
+
   }
 
 }
