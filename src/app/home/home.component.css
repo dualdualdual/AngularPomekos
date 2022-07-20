@@ -1,3 +1,6 @@
+
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+
 #fondo {
 
 background-image: url(https://wallpaperaccess.com/full/1089608.png);
@@ -10,4 +13,11 @@ background-position: bottom;
 
  width: 350px;
 
+}
+
+#pokeName {
+
+    text-transform: capitalize;
+    font-family: 'Pokemon Solid', sans-serif;
+    
 }
