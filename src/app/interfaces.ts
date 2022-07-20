@@ -194,3 +194,10 @@ export interface Result {
   name?: string;
   url?:  string;
 }
+
+export interface User {
+  createdAt: Date;
+  name:      string;
+  password:  string;
+  id:        string;
+}

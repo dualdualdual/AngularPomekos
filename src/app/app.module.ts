@@ -7,6 +7,7 @@ import { SharedModule } from "./shared/shared.module";
 import { HomePageComponent } from './views/home-page/home-page.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ProgressSpinnerModule} from "primeng/progressspinner";
+import {AuthModule} from "./auth/auth.module";
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import {ProgressSpinnerModule} from "primeng/progressspinner";
     HomePageComponent,
   ],
     imports: [
+        AuthModule,
         BrowserModule,
         AppRoutingModule,
         SharedModule,
