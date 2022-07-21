@@ -9,13 +9,13 @@ background-position: bottom;
 
 }
 
-#pokeImg {
+img {
 
  width: 350px;
 
 }
 
-#pokeName {
+h5 {
 
     text-transform: capitalize;
     font-family: 'Pokemon Solid', sans-serif;

@@ -9,11 +9,11 @@ import { PokemonService } from '../services/pokemon.service';
 export class HomeComponent implements OnInit {
 
   pokemon!: Pokemon;
-  pokeId!: string;
+  pokeId!: string | number;
 
   generateRandomId(){
 
-    return Math.floor(Math.random() * 248)+1;
+    return Math.floor(Math.random() * 905)+1;
 
   }
 
@@ -21,8 +21,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.pokeId=(this.generateRandomId()).toString();
-
+    this.pokeId=(this.generateRandomId());
     this.pokeServ.getPoke(this.pokeId).subscribe(poke => {this.pokemon = poke})
 
   }

@@ -8,14 +8,16 @@ import { LoginComponent } from './login/login.component';
 import { PokedexComponent } from './pokedex/pokedex.component';
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
+import { PokedexItemComponent } from './pokedexItem/pokedexItem.component';
 
 @NgModule({
-  declarations: [				
+  declarations: [					
     AppComponent,
       NavbarComponent,
       LoginComponent,
       PokedexComponent,
-      HomeComponent
+      HomeComponent,
+      PokedexItemComponent
    ],
   imports: [
     BrowserModule,
