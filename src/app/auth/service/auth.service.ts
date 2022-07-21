@@ -15,6 +15,7 @@ export class AuthService {
 
   async login(username : string , password : string){
     let responseUser  = await lastValueFrom(this.http.get<User[]>(`https://62d5b53c15ad24cbf2cc372d.mockapi.io/api/v1/users?name=${username}`))
+
     return responseUser
   }
 

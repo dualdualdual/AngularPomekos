@@ -12,16 +12,40 @@
 
   <div class="grid grid-cols-2 w-3/4 mt-4 p-2 border-4 border-amber-700 rounded-2xl flex-initial bg-gray-300 bg-opacity-40">
     <div class="relative col-span-2 mb-5"><h2 class="text-4xl text-center ">Login</h2></div>
-    <div class="relative p-1">
+    <div class="relative p-1 col-span-2">
       <input type="text" id="name" name="name" formControlName="name" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
-      <label for="name" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Username</label>
+      <label for="name" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+        [ngClass]="(appLoginControl.controls['name']?.errors && !appLoginControl.pristine)?['text-red-600']:[]" >
+        Username
+      </label>
+      <div>
+        <span *ngIf="appLoginControl.controls['name']?.hasError('required') && !appLoginControl.pristine">
+          Campo Requerido
+        </span>
+        <span *ngIf="appLoginControl.controls['name']?.errors && !appLoginControl.pristine">
+          Longitud entre 1 y 16 caracteres
+        </span>
+      </div>
     </div>
-    <div class="relative p-1">
+    <div class="relative p-1 col-span-2">
       <input type="text" id="pswd" name="pswd" formControlName="pswd" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
-      <label for="pswd" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Password</label>
+      <label for="pswd" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+             [ngClass]="(appLoginControl.controls['pswd']?.errors && !appLoginControl.pristine)?['text-red-600']:[]">
+        Password
+      </label>
+      <div>
+        <span *ngIf="appLoginControl.controls['pswd']?.hasError('required') && !appLoginControl.pristine">
+          Campo Requerido
+        </span>
+        <span *ngIf="appLoginControl.controls['pswd']?.errors && !appLoginControl.pristine">
+          Longitud minima de 3 caracteres
+        </span>
+      </div>
     </div>
     <div class="col-span-2 mt-5 flex items-center justify-center">
-      <button type="submit" class="bg-blue-500 p-2 rounded-2xl hover:bg-blue-700 active:bg-blue-200 w-3/4 "> submit </button>
+      <button type="submit" class="bg-blue-500 p-2 rounded-2xl hover:bg-blue-700 active:bg-blue-200 w-2/4 "> submit </button>
     </div>
   </div>
+
+
 </form>
