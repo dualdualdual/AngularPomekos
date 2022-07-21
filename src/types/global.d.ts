@@ -2,6 +2,25 @@ export {};
 
 declare global {
 
+  interface User {
+    createdAt: Date;
+    name: string;
+    password: string;
+    id: string;
+  }
+//----------------------------
+  export interface PokePage {
+    count: number;
+    next: string;
+    previous: null;
+    results: Result[];
+  }
+
+  export interface Result {
+    name: string;
+    url: string;
+  }
+//-----------------------------
   interface Pokemon {
     abilities: Ability[];
     base_experience: number;
@@ -186,5 +205,4 @@ declare global {
     slot: number;
     type: Species;
   }
-  
 }
