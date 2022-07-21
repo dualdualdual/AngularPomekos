@@ -1,0 +1,15 @@
+
+<div ngClass="conjunto">
+  <div ngClass="imagen">
+  <img src="{{pokemon.sprites.front_shiny}}">
+</div>
+<div ngClass="cuerpo">
+  <label>{{pokemon.name}}</label><br>
+  <label>Defensa:</label><label>{{pokemon.stats[2].base_stat}}</label><br>
+  <label>Daño:</label><label>{{pokemon.stats[1].base_stat}}</label><br>
+  <label>Ataques:</label><label *ngFor="let item of pokemon.abilities">{{item.ability.name}}/</label><br>
+  <label>Vida:</label><label>{{pokemon.stats[0].base_stat}}</label><br>
+</div>
+</div>
+
+<label ngClass="tipo">{{pokemon.types[0].type.name}}</label>
