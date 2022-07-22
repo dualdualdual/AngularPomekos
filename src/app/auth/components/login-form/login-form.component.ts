@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, Validator, Validators} from "@angular/forms";
 import {AuthService} from "../../service/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-form',
@@ -9,7 +10,10 @@ import {AuthService} from "../../service/auth.service";
 })
 export class LoginFormComponent implements OnInit {
 
-  constructor(private fb : FormBuilder , private authservice : AuthService) { }
+  constructor(
+    private fb : FormBuilder ,
+    private authservice : AuthService,
+    private router : Router) { }
 
   ngOnInit(): void {
 
@@ -21,19 +25,18 @@ export class LoginFormComponent implements OnInit {
   })
 
   async handleSubmit(){
-    console.log(this.appLoginControl)
-
     let username = this.appLoginControl.controls['name'].value;
     let password = this.appLoginControl.controls['pswd'].value;
 
     if(this.appLoginControl.status === "INVALID")return
 
-    console.log(this.appLoginControl)
     let user = await this.authservice.login(username , password);
-    console.log(user)
+
     if(user.length === 0 || user[0].password !== password)return
 
     this.authservice.islogged = true;
+
+    this.router.navigateByUrl('/list')
   }
 
 }
