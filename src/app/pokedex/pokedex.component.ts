@@ -23,20 +23,25 @@ contactForm!: FormGroup;
 
 idnum=0;
 num=0;
+anterior!:string;
+siguiente!:string;
+
   ngOnInit(): void {
-    this.dsv.getPokemons(20)
+    this.dsv.getPokemonsByMax(20)
     .subscribe(res => {
       console.log(res.results);
       this.pokemons =  res.results;
+      this.setAnteriorSiguente(res.previous,res.next);
        })
   }
 
 onSubmit(){
  console.log(this.contactForm.value.cantidad);
-  this.dsv.getPokemons(this.contactForm.value.cantidad)
-    .subscribe(res => {
+  this.dsv.getPokemonsByMax(this.contactForm.value.cantidad)
+  .subscribe(res => {
       console.log(res.results);
       this.pokemons =  res.results;
+      this.setAnteriorSiguente(res.previous,res.next);
        })
 }
 
@@ -48,6 +53,30 @@ initForm(): FormGroup {
 
 goToCard(url:String){
   this.router.navigate(['pokecard'],{queryParams:{URL:url}});
+}
+
+irAnterior(){
+  this.dsv.getPokemonsByurl(this.anterior)
+  .subscribe(res => {
+      console.log(res.results);
+      this.pokemons =  res.results;
+      this.setAnteriorSiguente(res.previous,res.next);
+       })
+}
+irSiguiente(){
+  this.dsv.getPokemonsByurl(this.siguiente)
+  .subscribe(res => {
+      console.log(res.results);
+      this.pokemons =  res.results;
+      this.setAnteriorSiguente(res.previous,res.next);
+       })
+}
+
+setAnteriorSiguente(anterior:string|null,siguiente:string){
+if(anterior!=null){
+  this.anterior = anterior;
+}
+this.siguiente = siguiente;
 }
 
 }

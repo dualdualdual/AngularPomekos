@@ -16,12 +16,16 @@ export class DataService{
 
   constructor(private readonly http:HttpClient){}
 
-  getPokemons(num:Number):Observable<ResPokemon>{
+  getPokemonsByMax(num:Number):Observable<ResPokemon>{
     if(num==null || num>0){
       return this.http.get<ResPokemon>(this.API + "?limit=" + num);
     }else{
       return this.http.get<ResPokemon>(this.API);
     }
+  }
+
+  getPokemonsByurl(url:string){
+    return this.http.get<ResPokemon>(url);
   }
 
   getInfoPokemon(url:string):Observable<Pokemon>{

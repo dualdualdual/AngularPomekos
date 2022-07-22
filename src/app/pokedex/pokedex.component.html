@@ -1,12 +1,13 @@
 
-<div class="div1">
-<table>
-  <tr><td>Pokemon</td><td>Info</td></tr>
-  <tr *ngFor="let pokemon of pokemons"><td>{{pokemon.name}}</td><td><a (click)="goToCard(this.pokemon.url)">{{pokemon.url}}</a></td></tr>
-</table>
-</div>
 <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
   <div class="div2"><label class="text-yellow-300 bg-red-600">Número de pokemons</label><input type="number" min="0" max="100" formControlName="cantidad" name="cantidad">
   <br><button type="submit" class="bg-white border-black border-2">Enviar</button>
   </div>
 </form>
+<div class="div1">
+<table>
+  <tr><td>Pokemon</td><td>Info</td></tr>
+  <tr *ngFor="let pokemon of pokemons"><td>{{pokemon.name}}</td><td><a (click)="goToCard(this.pokemon.url)"  routerLink="#">{{pokemon.url}}</a></td></tr>
+</table>
+</div>
+<div><button class="b1 bg-white border-black border-4" (click)="irAnterior()" *ngIf="this.anterior!=null || this.anterior == '' ">Anterior</button><button class="b2 bg-white border-black border-4" (click)="irSiguiente()" *ngIf="this.siguiente!=null || this.siguiente == '' ">Siguente</button></div>
