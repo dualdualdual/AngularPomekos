@@ -5,7 +5,8 @@
   <div>
     <ul class="flex-row flex">
       <li *ngFor="let item of items; index as i" >
-        <a [routerLink]="[item.path]" routerLinkActive="active" class="hover:bg-gray-700 p-4 hover:rounded-b-md">{{item.name}}</a>
+        <a [routerLink]="[item.path]" *ngIf="!item.needLogin  || authservice.islogged" routerLinkActive="active" class="hover:bg-gray-700 p-4 hover:rounded-b-md">{{item.name}}</a>
+
       </li>
     </ul>
   </div>

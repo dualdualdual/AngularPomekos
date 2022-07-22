@@ -168,6 +168,12 @@ export interface Other {
   "official-artwork": OfficialArtwork;
 }
 
+export interface OtherModel {
+  dream_world:        DreamWorld;
+  home:               Home;
+  official_artwork: OfficialArtwork;
+}
+
 export interface OfficialArtwork {
   front_default: string;
 }

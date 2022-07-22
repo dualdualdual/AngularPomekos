@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../../auth/service/auth.service";
 
 export interface MenuItems {
   name: string
   path: string
   isActive: boolean
+  needLogin?: boolean
 }
 
 const items : MenuItems[] = [
@@ -15,12 +17,14 @@ const items : MenuItems[] = [
   {
     path: "/login",
     name: "login",
-    isActive: false
+    isActive: false,
+    needLogin: false
   },
   {
     path: "/list",
     name: "list",
-    isActive: false
+    isActive: false,
+    needLogin: true
   }
 ]
 
@@ -31,7 +35,7 @@ const items : MenuItems[] = [
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authservice: AuthService) { }
 
   ngOnInit(): void {
     this.items = items;

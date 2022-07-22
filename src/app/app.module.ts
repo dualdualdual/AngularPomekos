@@ -8,6 +8,7 @@ import { HomePageComponent } from './views/home-page/home-page.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ProgressSpinnerModule} from "primeng/progressspinner";
 import {AuthModule} from "./auth/auth.module";
+import { OfficialArtworkPipePipe } from './utils/pipes/official-artwork-pipe.pipe';
 
 
 @NgModule({
@@ -15,15 +16,17 @@ import {AuthModule} from "./auth/auth.module";
     AppComponent,
     HomePageComponent,
   ],
-    imports: [
-        AuthModule,
-        BrowserModule,
-        AppRoutingModule,
-        SharedModule,
-        HttpClientModule,
-        ProgressSpinnerModule
-    ],
+  imports: [
+    AuthModule,
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    HttpClientModule,
+    ProgressSpinnerModule
+  ],
   providers: [],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
 

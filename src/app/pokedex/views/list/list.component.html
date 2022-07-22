@@ -1,3 +1,8 @@
-<div class="grid grid-cols-6 grid-rows-5 p-5">
-  <app-poke-card *ngFor="let poke of pokemons ; index as i"></app-poke-card>
+<div class="h-full flex flex-col p-3 pr-6 w-screen">
+  <div class="grid grid-cols-2 gap-3 flex-auto lg:grid-cols-6 lg:grid-rows-5 md:grid-cols-5 md:grid-rows-6 sm:grid-cols-3 sm:grid-rows-10">
+
+    <app-poke-card *ngFor="let poke of pokemons ; index as i" [pokemon]="poke" class="aspect-square"></app-poke-card>
+
+  </div>
+  <div class="h-20 p-3 flex justify-center items-center">hola</div>
 </div>

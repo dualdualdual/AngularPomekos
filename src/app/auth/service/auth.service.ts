@@ -9,7 +9,7 @@ import {flatMap, lastValueFrom} from "rxjs";
 export class AuthService {
 
   user ?: User
-  islogged ?: boolean = false;
+  islogged ?: boolean = true;
 
   constructor(private http : HttpClient) { }
 
