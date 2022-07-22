@@ -184,15 +184,15 @@ export interface Type {
 }
 
 export interface PokemonList {
-  count?:    number;
-  next?:     string;
-  previous?: null;
-  results?:  Result[];
+  count:    number;
+  next:     string;
+  previous: null;
+  results:  Result[];
 }
 
 export interface Result {
-  name?: string;
-  url?:  string;
+  name: string;
+  url:  string;
 }
 
 export interface User {

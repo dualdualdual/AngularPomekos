@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { PokedexRoutingModule } from './pokedex-routing.module';
 import {ListComponent} from "./views/list/list.component";
+import { PokeCardComponent } from './components/poke-card/poke-card.component';
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
   declarations: [
-    ListComponent
+    ListComponent,
+    PokeCardComponent
   ],
   imports: [
     CommonModule,
-    PokedexRoutingModule
+    PokedexRoutingModule,
+    HttpClientModule
   ]
 })
 export class PokedexModule { }

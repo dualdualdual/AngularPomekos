@@ -12,12 +12,14 @@ export class HomePageComponent implements OnInit {
   pokemonSprite : string | undefined ="";
   pokemon ?: string
   isLoading : boolean
+
   constructor(private pokemonservice : PokemonService) {
     this.isLoading = true;
     this.pokemonservice.getCountPokemon().subscribe(data=>{
       this.pokemonservice.getPokemon(data.count).subscribe(data=>{
         this.pokemonservice.getPokemonSprite(data.results?.shift()?.url).subscribe(data=>{
-          this.pokemonSprite = data.sprites.front_default;
+          this.pokemonSprite = data.sprites.other?.
+         ["official-artwork"].front_default;
           this.pokemon = data.name
           this.isLoading = false
         })
